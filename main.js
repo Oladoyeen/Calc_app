@@ -15,6 +15,8 @@ for (let key of keys) {
         } else if (value == "backspace") {
             input = input.slice(0, -1);
             display_input.innerHTML = input;
+        } else if (value == "=") {
+            let result = eval(input);
         }
     })
 }
