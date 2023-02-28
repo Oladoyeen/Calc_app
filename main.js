@@ -21,8 +21,8 @@ for (let key of keys) {
             display_output.innerHTML = result;
         } else if (value == "brackets") {
             if (input.indexOf("(")) == -1 || input.indexOf("(") != -1 && input.indexOf(")") != -1 && input.lastIndexOf("(") < input.lastIndexOf(")") {
-                input += "("
-            }
+                input += "(";
+            } else if (input.indexOf("(") )  
         }
     })
 }
