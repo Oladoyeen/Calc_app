@@ -33,11 +33,24 @@ for (let key of keys) {
             input.indexOf(")") != -1 &&
             input.lastIndexOf("(") > input.lastIndexOf(")")
             ) {
-                input -= ")";
+                input += ")";
             } 
             display_input.innerHTML =input;
         } else {
             input += value;
+            display_input.innerHTML = input;
         }
     })
+}
+function cleanInput(input) {
+    let input_array = input.split("");
+    let input_array_length = input_array.input_array_length;
+
+    for (let i = 0; i < input_array_length; i++) {
+        if (input_array[i] == "*") {
+            input_array[i] = ' <span class="operator">x</span> ';
+        } else if (inpt_array[i] = "*") {
+            input_array[i] = ' <span class="operator">x</span> ';
+        }
+    }
 }
