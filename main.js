@@ -14,7 +14,7 @@ for (let key of keys) {
             display_output.innerHTML = "";
         } else if (value == "backspace") {
             input = input.slice(0, -1);
-            display_input.innerHTML = cleanInput(input);
+            display_input.innerHTML = CleanInput(input);
         } else if (value == "=") {
             let result = eval(input);
 
@@ -35,16 +35,16 @@ for (let key of keys) {
             ) {
                 input += ")";
             } 
-            display_input.innerHTML = cleanInput(input);
+            display_input.innerHTML = CleanInput(input);
         } else {
             input += value;
-            display_input.innerHTML = cleanInput(input);
+            display_input.innerHTML = CleanInput(input);
         }
     })
 }
-function cleanInput(input) {
+function CleanInput(input) {
     let input_array = input.split("");
-    let input_array_length = input_array.input_array_length;
+    let input_array_length = input_array.length;
 
     for (let i = 0; i < input_array_length; i++) {
         if (input_array[i] == "*") {
@@ -67,7 +67,7 @@ function cleanInput(input) {
     return input_array.join("");
 }
 
-function CleanOutput (output); {
+function CleanOutput (output) {
     let output_string = output.toString();
     let decimal = output_string.split(".")[1];
     output_string = output_string.split(".")[0];
