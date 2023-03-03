@@ -21,17 +21,18 @@ for (let key of keys) {
             display_output.innerHTML = CleanOutput(result);
         } else if (value == "brackets") {
             if (
-            input.indexOf("(") == -1 || 
-            input.indexOf("(") != -1 && 
-            input.indexOf(")") != -1 && 
-            input.lastIndexOf("(") < input.lastIndexOf(")")) {
+                 input.indexOf("(") == -1 || 
+                 input.indexOf("(") != -1 && 
+                 input.indexOf(")") != -1 && 
+                 input.lastIndexOf("(") < input.lastIndexOf(")")
+            ) {
                 input += "(";
             } else if (
-            input.indexOf("(") != -1 && 
-            input.indexOf(")") == -1 ||
-            input.indexOf("(") != -1 &&
-            input.indexOf(")") != -1 &&
-            input.lastIndexOf("(") > input.lastIndexOf(")")
+                input.indexOf("(") != -1 && 
+                input.indexOf(")") == -1 ||
+                input.indexOf("(") != -1 &&
+                input.indexOf(")") != -1 &&
+                input.lastIndexOf("(") > input.lastIndexOf(")")
             ) {
                 input += ")";
             } 
@@ -49,17 +50,17 @@ function CleanInput(input) {
     for (let i = 0; i < input_array_length; i++) {
         if (input_array[i] == "*") {
             input_array[i] = ' <span class="operator">x</span> ';
-        } else if (input_array[i] = "/") {
+        } else if (input_array[i] == "/") {
             input_array[i] = ' <span class="operator">÷</span> ';
-        } else if (input_array[i] = "+") {
+        } else if (input_array[i] == "+") {
             input_array[i] = ' <span class="operator">+</span> ';
-        } else if (input_array[i] = "-") {
+        } else if (input_array[i] == "-") {
             input_array[i] = ' <span class="operator">-</span> ';
-        } else if (input_array[i] = "(") {
+        } else if (input_array[i] == "(") {
             input_array[i] = '<span class="brackets">(</span>';
-        } else if (input_array[i] = ")") {
+        } else if (input_array[i] == ")") {
             input_array[i] = '<span class="brackets">)</span>';
-        } else if (input_array[i] = "%") {
+        } else if (input_array[i] == "%") {
             input_array[i] = '<span class="percent">%</span>';
         } 
     }
